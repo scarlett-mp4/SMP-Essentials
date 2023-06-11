@@ -1,0 +1,24 @@
+# Plugin Config:
+Sleep:
+  SkipNight: true
+  PlayerSleepPercentage: 50.0
+  World: "world"
+Tpa:
+  Timeout: 30
+  WaitTime: 5
+Homes:
+  Max: 3
+  WaitTime: 5
+Chat:
+  # [DISPLAYNAME], [PLAYER], [MESSAGE], & PAPI Placeholders
+  # https://github.com/PlaceholderAPI/PlaceholderAPI/wiki/Placeholders
+  # Make sure to download the placeholders you are using via '/papi ecloud download <package>'
+  Format: '%luckperms_prefix% [DISPLAYNAME]&7: &r[MESSAGE]'
+  BlockMessage: "&cThis message contains a blocked word!"
+  BlockedWords:
+    - FartNugget
+    - "I am from planet minecraft"
+Login:
+  # [DISPLAYNAME], [PLAYER], & PAPI Placeholders
+  JoinMessage: "&e[DISPLAYNAME] has joined the game"
+  LeaveMessage: "&e[DISPLAYNAME] has left the game"

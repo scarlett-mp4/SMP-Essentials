@@ -1,0 +1,78 @@
+name: SMP
+version: '${project.version}'
+main: me.skarless.Smp
+api-version: 1.20
+authors: [ Skarless ]
+description: A simple SMP plugin!
+website: www.twitter.com/xSkarless
+depend:
+  - PlaceholderAPI
+commands:
+  setspawn:
+    usage: </command>
+    description: Sets the world spawn.
+  spawn:
+    usage: </command>
+    description: Teleport to the world spawn.
+  tpa:
+    usage: </command>
+    description: Teleport to a player.
+  tpaccept:
+    usage: </command>
+    description: Accept a teleport request.
+  tpdeny:
+    usage: </command>
+    description: Deny a teleport request.
+  broadcast:
+    usage: </command>
+    description: Broadcast a message to the server.
+    aliases:
+      - bc
+  msg:
+    usage: </command>
+    description: Send a private message to a player.
+    aliases:
+      - whisper
+      - w
+      - tell
+      - message
+  enderchest:
+    usage: </command>
+    description: Open your enderchest.
+    aliases:
+      - ec
+  workbench:
+    usage: </command>
+    description: Open a crafting table.
+    aliases:
+      - craftingtable
+      - wb
+  gamemode:
+    usage: </command>
+    description: Switch your gamemode.
+    aliases:
+      - gm
+  nick:
+    usage: </command>
+    description: Switch your gamemode.
+    aliases:
+      - nickname
+      - realname
+      - displayname
+  reply:
+    usage: </command>
+    description: Reply to your last sent/received message.
+    aliases:
+      - r
+  home:
+    usage: </command>
+    description: Teleport to your home.
+  sethome:
+    usage: </command>
+    description: Set your home.
+  delhome:
+    usage: </command>
+    description: Delete your home.
+  homes:
+    usage: </command>
+    description: List your homes.

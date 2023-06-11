@@ -1,0 +1,79 @@
+General:
+  InvalidPermission: "&cYou do not have permission to execute this command!"
+  ConsoleBlocked: "&cOnly players can execute this command!"
+  Error: "&cOops! An error occurred while executing this command."
+  PlayerNotOnline: "&cThis player is not online!"
+Homes:
+  List: "&aYour homes: &7[HOMES_FORMATTED]"
+  NoHomes: "&cYou have no homes! &7(/sethome)"
+SetSpawn:
+  Set: "&aThe spawn has been set!"
+Spawn:
+  NoSpawn: "&cA spawn hasn't been set yet! Contact an administrator for help."
+  Warped: "&aYou are now at the spawn."
+Broadcast:
+  Prefix: "&7[&cBroadcast&7] &6"
+  NoMessage: "&cPlease include a message to broadcast!"
+Home:
+  Teleporting: "&7> &c&lStand Still!\n&aYou will be teleported home in &e[TIME] &aseconds!"
+  Warped: "&aYou are now home."
+  Choose: "&cPlease choose a valid home to warp to! &7(/homes)"
+  NoHomes: "&cYou haven't set any homes yet. &7(/sethome)"
+  PlayerMoved: "&cTeleport canceled due to player movement."
+DelHome:
+  Choose: "&cPlease specify a home to delete. &7(/homes)"
+  Deleted: "&aYour home has been deleted."
+  Invalid: "&cPlease specify a valid home. &7(/homes)"
+  NoHomes: "&cYou haven't set any homes yet. &7(/sethome)"
+SetHome:
+  Created: "&aHome set!"
+  Exists: "&cThat home name is already in use!"
+  TooMany: "&cYou may only have up to &e[HOME_COUNT] &chomes!"
+Gamemode:
+  Set: "&aGamemode set to &e[MODE]&a!"
+  InvalidPermission: "&cYou do not have permission to use this gamemode!"
+  IncludeAGamemode: "&cYou must specify a gamemode to use!"
+  UnknownGamemode: "&cInvalid gamemode!"
+  SetPlayer: "&aYou have set &e[PLAYER]&a's gamemode to &e[MODE]&a!"
+  CantSetPlayerMode: "&cYou do not have permission to set other player's gamemode."
+  IncludeAPlayer: "&cMake sure to include a player!"
+EnderChest:
+  Open: "&aOpening your enderchest..."
+Workbench:
+  Open: "&aOpening your workbench..."
+Message:
+  Format: "&e[FROM] &a-> &e[TO]&a: &f[MESSAGE]"
+  IncludePlayer: "&cPlease include a player to message."
+  IncludeMessage: "&cPlease include a message."
+Tpa:
+  IncludePlayer: "&cPlease include a player to teleport to."
+  AlreadySentToPlayer: "&cYou already sent a teleport request to this player."
+  TimedOut: "&cYour request to &e[PLAYER] &chas timed out."
+  TpaSent: "&aYou sent a teleport request to &e[PLAYER]&a! They have &e[TIMEOUT] seconds &ato respond."
+  CantTeleportToSelf: "&cYou can't teleport to yourself."
+  RequestReceived: "[LINE] &e[PLAYER] &awould like to teleport to you! [LINE]&5> Click here to: &a&l[ACCEPT] &7or &c&l[DECLINE] [LINE]"
+  Accept: "&a&lACCEPT"
+  AcceptMessage: "&7Accept the pending invite."
+  Decline: "&c&lDECLINE"
+  DeclineMessage: "&7Decline the pending invite."
+Tpaccept:
+  IncludePlayer: "&cPlease include a player's request to accept."
+  NoRequest: "&cYou do not have a request from this player."
+  Accepted: "&aYou have accepted &e[PLAYER]'s &ateleport request!"
+  Teleporting: "&7> &c&lStand Still!\n&e[PLAYER] &ahas accepted your teleport request. You will be teleported to them in &e[TIME] &aseconds!"
+  PlayerMoved: "&cTeleport canceled due to player movement."
+  Teleported: "&aYou have been teleported!"
+TpDeny:
+  IncludePlayer: "&cPlease include a player's request to deny."
+  NoRequest: "&cYou do not have a request from this player."
+  DenySuccess: "&aYou have denied &e[PLAYER]'s &ateleport request!"
+  Denied: "&e[PLAYER] &chas denied your teleport request."
+Sleep:
+  Slept: "&6[PLAYER] &ehas fallen asleep! &7([SLEEPING]/[NEEDED])"
+  Awake: "&6[PLAYER] &chas left their bed! &7([SLEEPING]/[NEEDED])"
+  Accelerating: "&bAccelerating the night..."
+Nick:
+  Reset: "&aYour nickname has been reset!"
+  Changed: "&aYour nickname has been updated to: &r[NICK]"
+Reply:
+  NoReply: "&cYou have no one to reply to!"
