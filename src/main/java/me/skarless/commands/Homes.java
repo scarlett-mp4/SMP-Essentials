@@ -22,8 +22,8 @@ public class Homes extends SmpCommand {
         final Pattern HOMES_FORMATTED = Pattern.compile("[HOMES_FORMATTED]", 16);
         final FileConfiguration c = Smp.getInstance().saveConfig.getConfig();
         final Player p = (Player) sender;
-        if (c.contains(String.valueOf(p.getUniqueId()))) {
-            final List<String> homes = new ArrayList<String>(Objects.requireNonNull(c.getConfigurationSection(String.valueOf(p.getUniqueId()))).getKeys(false));
+        if (c.contains(p.getUniqueId() + ".homes")) {
+            final List<String> homes = new ArrayList<String>(Objects.requireNonNull(c.getConfigurationSection(p.getUniqueId() + ".homes").getKeys(false)));
             final StringBuilder sb = new StringBuilder();
             for (final String s : homes) {
                 sb.append(s).append(", ");

@@ -19,25 +19,25 @@ public class SetHome extends SmpCommand {
     public void execute(final CommandSender sender, final String[] args) {
         final Player p = (Player) sender;
         final FileConfiguration c = Smp.getInstance().saveConfig.getConfig();
-        final Pattern HOME_COUNT = Pattern.compile("[HOME_COUNT]", 16);
+        final Pattern HOME_COUNT = Pattern.compile("[HOME_COUNT]", Pattern.LITERAL);
         int i = 0;
-        if (c.contains(String.valueOf(p.getUniqueId()))) {
-            for (final String s : Objects.requireNonNull(c.getConfigurationSection(String.valueOf(p.getUniqueId()))).getKeys(false)) {
-                if (++i >= Smp.getInstance().getConfig().getInt("Homes.Max")) {
+        if (c.contains(p.getUniqueId() + ".homes")) {
+            for (final String s : c.getConfigurationSection((p.getUniqueId() + ".homes")).getKeys(false)) {
+                if (++i > Smp.getInstance().getConfig().getInt("Homes.Max")) {
                     p.sendMessage(HOME_COUNT.matcher(StringParse.getMessage("SetHome.TooMany")).replaceAll(String.valueOf(Smp.getInstance().getConfig().getInt("Homes.Max"))));
                     return;
                 }
             }
         }
         if (args.length == 0) {
-            c.set(String.valueOf(p.getUniqueId()), StringParse.parseLocation(p.getLocation()));
+            c.set(p.getUniqueId() + ".homes.home", StringParse.parseLocation(p.getLocation()));
         }
         if (args.length > 0) {
-            if (c.contains(p.getUniqueId() + "." + args[0])) {
+            if (c.contains(p.getUniqueId() + ".homes." + args[0])) {
                 p.sendMessage(StringParse.getMessage("SetHome.Exists"));
                 return;
             }
-            c.set(p.getUniqueId() + "." + args[0], StringParse.parseLocation(p.getLocation()));
+            c.set(p.getUniqueId() + ".homes." + args[0], StringParse.parseLocation(p.getLocation()));
         }
         p.sendMessage(StringParse.getMessage("SetHome.Created"));
         Smp.getInstance().saveConfig.saveConfig();

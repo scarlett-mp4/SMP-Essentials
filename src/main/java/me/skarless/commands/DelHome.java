@@ -22,10 +22,10 @@ public class DelHome extends SmpCommand {
             p.sendMessage(StringParse.getMessage("DelHome.Choose"));
             return;
         }
-        if (c.contains(String.valueOf(p.getUniqueId()))) {
-            for (final String s : Objects.requireNonNull(c.getConfigurationSection(String.valueOf(p.getUniqueId()))).getKeys(false)) {
+        if (c.contains(p.getUniqueId() + ".homes")) {
+            for (final String s : c.getConfigurationSection(p.getUniqueId() + ".homes").getKeys(false)) {
                 if (Objects.equals(s.toLowerCase(), args[0].toLowerCase())) {
-                    c.set(String.valueOf(p.getUniqueId()), null);
+                    c.set(p.getUniqueId() + ".homes." + s, null);
                     Smp.getInstance().saveConfig.saveConfig();
                     p.sendMessage(StringParse.getMessage("DelHome.Deleted"));
                     return;

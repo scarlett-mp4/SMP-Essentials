@@ -25,7 +25,6 @@ public class Broadcast extends SmpCommand {
         for (final Player p : Bukkit.getOnlinePlayers()) {
             p.sendMessage(StringParse.getMessage("Broadcast.Prefix"), ChatColor.translateAlternateColorCodes('&', sb.toString()));
         }
-        Bukkit.getConsoleSender().sendMessage(StringParse.getMessage("Broadcast.Prefix"),
-                ChatColor.translateAlternateColorCodes('&', sb.toString()));
+        Bukkit.getConsoleSender().sendMessage(StringParse.getMessage("Broadcast.Prefix") + ChatColor.translateAlternateColorCodes('&', sb.toString()));
     }
 }

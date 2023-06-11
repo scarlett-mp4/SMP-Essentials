@@ -16,19 +16,19 @@ public class Nick extends SmpCommand {
 
     @Override
     public void execute(final CommandSender sender, final String[] args) {
-        final Pattern NICK = Pattern.compile("[NICK]", 16);
+        final Pattern NICK = Pattern.compile("[NICK]", Pattern.LITERAL);
         final Player p = (Player) sender;
         if (args.length == 0) {
             p.sendMessage(StringParse.getMessage("Nick.Reset"));
             p.setDisplayName(p.getName());
             p.setPlayerListName(p.getName());
-            Smp.getInstance().saveConfig.getConfig().set(String.valueOf(p.getUniqueId()), p.getName());
+            Smp.getInstance().saveConfig.getConfig().set(p.getUniqueId() + ".nick", p.getName());
         } else {
             final String nick = ChatColor.translateAlternateColorCodes('&', args[0]);
             p.setDisplayName(nick);
             p.setPlayerListName(nick);
             p.sendMessage(NICK.matcher(StringParse.getMessage("Nick.Changed")).replaceAll(nick));
-            Smp.getInstance().saveConfig.getConfig().set(String.valueOf(p.getUniqueId()), nick);
+            Smp.getInstance().saveConfig.getConfig().set(p.getUniqueId() + ".nick", nick);
         }
         Smp.getInstance().saveConfig.saveConfig();
     }

@@ -2,6 +2,7 @@ package me.skarless.listeners;
 
 import me.clip.placeholderapi.PlaceholderAPI;
 import me.skarless.Smp;
+import org.apache.commons.text.StringEscapeUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
@@ -14,6 +15,7 @@ import java.util.regex.Pattern;
 public class ChatListener implements Listener {
     @EventHandler
     public void onChatMessage(final AsyncPlayerChatEvent e) {
+        e.setCancelled(true);
         for (final String s : Smp.getInstance().getConfig().getStringList("Chat.BlockedWords")) {
             if (e.getMessage().toLowerCase().contains(s.toLowerCase())) {
                 if (Smp.getInstance().getConfig().getString("Chat.BlockMessage").equals("")) {
@@ -30,9 +32,9 @@ public class ChatListener implements Listener {
         final Pattern MESSAGE = Pattern.compile("[MESSAGE]", 16);
         String message = Smp.getInstance().getConfig().getString("Chat.Format");
         if (p.hasPermission("smp.chat.color")) {
-            raw = ChatColor.translateAlternateColorCodes('&', e.getMessage());
+            raw = ChatColor.translateAlternateColorCodes('&', StringEscapeUtils.escapeJava(e.getMessage()));
         } else {
-            raw = e.getMessage();
+            raw = StringEscapeUtils.escapeJava(e.getMessage());
         }
         assert message != null;
         message = DISPLAYNAME.matcher(message).replaceAll(p.getDisplayName());
@@ -40,8 +42,7 @@ public class ChatListener implements Listener {
         message = MESSAGE.matcher(message).replaceAll(raw);
         message = PlaceholderAPI.setPlaceholders(p, message);
         message = ChatColor.translateAlternateColorCodes('&', message);
-        for (final Player player : Bukkit.getOnlinePlayers()) {
-            e.setFormat(message);
-        }
+        for (Player bp : Bukkit.getOnlinePlayers())
+            bp.sendMessage(message);
     }
 }

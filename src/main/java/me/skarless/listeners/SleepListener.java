@@ -62,6 +62,7 @@ public class SleepListener implements Listener {
         if (this.sleeping.size() >= (double) this.needed) {
             this.sleeping.clear();
             Bukkit.getScheduler().runTaskLater(Smp.getInstance(), () -> {
+                int i = 0;
                 for (Player p : Bukkit.getOnlinePlayers()) {
                     p.sendMessage(StringParse.getMessage("Sleep.Accelerating"));
                     p.spigot().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(StringParse.getMessage("Sleep.Accelerating")));
